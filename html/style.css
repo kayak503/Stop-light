@@ -1,0 +1,44 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #252525;
+}
+.light-toggle{
+    display: grid;
+    grid-template-columns:auto auto auto;
+    
+}
+.div-button{
+    width: 100%;
+    height: 100vh;
+}
+#RED{
+    background-color: red;
+}
+#YELLOW{
+    background-color: yellow;
+}
+#GREEN{
+    background-color: green;
+}
+
+.clicked {
+    filter: saturate(40%);
+}
+
+@media screen and (max-width: 580px) {
+    .light-toggle{
+        display: grid;
+        grid-template-columns:auto 33vh auto;
+        grid-template-rows: auto auto auto;
+        row-gap: .5vh;
+    }
+
+    .div-button{
+        grid-column: 2;
+        height: 33vh;
+        width: 33vh;
+        border-radius: 100%;
+    }
+
+}
