@@ -1,7 +1,7 @@
 {
   "name": "stop-light",
-  "version": "0.0.1",
-  "description": "Control a trafic light with your phone",
+  "version": "0.0.5",
+  "description": "Control a traffic light with your phone",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -3,6 +3,9 @@ const Gpio = require('onoff').Gpio
 const app = express();
 
 const RED = new Gpio(21, 'out');
+const YELLOW = new Gpio(20, 'out');
+const GREEN = new Gpio(26, 'out');
+
 
 app.use(express.urlencoded({extended : false}));
 
@@ -20,7 +23,11 @@ app.get('/', function (req, res) {
   app.get('/override:lightState', function(req,res){
     lightState = req.params.lightState.split(":")[1].split("_")
     res.send("Data received")
-    RED.writeSync(parseInt(lightState[1]))
+
+    if (lightState[0] == "RED") { RED.writeSync(parseInt(lightState[1]))} 
+    if (lightState[0] == "YELLOW") { YELLOW.writeSync(parseInt(lightState[1]))} 
+    if (lightState[0] == "GREEN") { GREEN.writeSync(parseInt(lightState[1]))} 
+
   });
  
   
