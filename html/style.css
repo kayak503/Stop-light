@@ -1,3 +1,11 @@
+@keyframes anim-glow {
+	0% {
+		box-shadow: 0 0 rgba(#61EF61, 1);
+	}
+	100% {
+		box-shadow: 0 0 10px 8px }
+    }
+
 body {
     margin: 0px;
     padding: 0px;
@@ -14,12 +22,15 @@ body {
 }
 #RED{
     background-color: red;
+    
 }
 #YELLOW{
     background-color: yellow;
+   
 }
 #GREEN{
-    background-color: green;
+    background-color: rgb(41, 201, 41);
+    
 }
 
 .clicked {
