@@ -62,6 +62,12 @@ window.onload = function(){
        const element = buttons[index];
        element.addEventListener("click", Clicked)
     }
+
+    while (true){
+        setTimeout(function () {
+            Update()
+          }, 500);
+    }
 }
 
 

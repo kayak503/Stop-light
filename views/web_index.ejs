@@ -10,21 +10,26 @@
 </head>
 <body>
     <div class="light-toggle">
-        <div class="div-button 
-        <% if (red == false) { %>
-            <%="clicked" %> 
+        <div
+        <% if (red == true) { %>
+            <%=class="div-button clicked" %> 
+        <% } else { %>
+            <%=class="div-button" %> 
         <% } %>
-        " id="RED"></div>
-        <div class="div-button
-        <% if (yellow == false) { %>
-            <%="clicked" %> 
+        id="RED"></div>
+        <div <% if (yellow == true) { %>
+            <%=class="div-button clicked" %> 
+        <% } else { %>
+            <%=class="div-button" %> 
         <% } %>
-        " id="YELLOW"></div>
-        <div class="div-button
-        <% if (green == false) { %>
-            <%="clicked" %> 
+        id="YELLOW"></div>
+        <div 
+        <% if (green == true) { %>
+            <%=class="div-button clicked" %> 
+        <% } else { %>
+            <%=class="div-button" %> 
         <% } %>
-        " id="GREEN"></div>
+        id="GREEN"></div>
     </div>
 </body>
 </html>
