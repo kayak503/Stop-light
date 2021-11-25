@@ -9,16 +9,17 @@ module.exports = function (RED,YELLOW,GREEN){
         });
     router.route("/update/get")
     .get((req, res, next ) =>{
-        res.send("1,0,1")
+        //res.send("1,0,1")
 
-        RYG = [
-        RED.readSync(),
-        YELLOW.readSync(),
-        GREEN.readSync()
-        ]   
+        let RYG = [
+        RED.readSync().toString(),
+        YELLOW.readSync().toString(),
+        GREEN.readSync().toString()
+        ];
+	let msg = RYG.toString();
 
-        res.send(RYG.toString())
-        (req, res, next);
+        //res.send( (RYG.toString()) )
+        res.send(msg);
     });
     router.route("/update/override:lightState")
     .get((req, res, next ) =>{
