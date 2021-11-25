@@ -1,13 +1,14 @@
-async function delay() {
-    return new Promise(resolve => {resolve()})
-}
-
-function waitFor(milisec) {
+function delay(milisec) {
     return new Promise(resolve => {
         setTimeout(() => { resolve('') }, milisec);
     })
 }
-
+async function update_loop() {
+    while (true){
+        await delay(500);
+        Update()
+    }
+}
 
 function Clicked(event){
     let element;
@@ -74,11 +75,7 @@ window.onload = function(){
        element.addEventListener("click", Clicked)
     }
 
-    while (true){
-        waitFor(500)
-        Update()
-
-    }
+    update_loop()
 }
 
 
