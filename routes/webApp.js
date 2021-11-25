@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const Gpio = require('onoff').Gpio;
+const RED = new Gpio(21, 'out');
+const YELLOW = new Gpio(20, 'out');
+const GREEN = new Gpio(26, 'out');
 
-module.exports = function (RED,YELLOW,GREEN){
+module.exports = function (Gpio){
+
     router.route("/")
         .get((req, res, next ) =>{
             res.render('web_index', {red: false ,yellow: false ,green: false});
@@ -9,7 +14,7 @@ module.exports = function (RED,YELLOW,GREEN){
         });
     router.route("/update/get")
     .get((req, res, next ) =>{
-        res.send("1,0,1")
+        //res.send("1,0,1")
 
         RYG = [
         RED.readSync(),
