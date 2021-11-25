@@ -1,3 +1,14 @@
+async function delay() {
+    return new Promise(resolve => {resolve()})
+}
+
+function waitFor(milisec) {
+    return new Promise(resolve => {
+        setTimeout(() => { resolve('') }, milisec);
+    })
+}
+
+
 function Clicked(event){
     let element;
     try {
@@ -64,9 +75,9 @@ window.onload = function(){
     }
 
     while (true){
-        setTimeout(function () {
-            Update()
-          }, 500);
+        waitFor(500)
+        Update()
+
     }
 }
 
