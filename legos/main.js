@@ -5,8 +5,8 @@ function delay(milisec) {
 }
 async function update_loop() {
     while (true){
-        await delay(500);
         Update()
+        await delay(500);
     }
 }
 
