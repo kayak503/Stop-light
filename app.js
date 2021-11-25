@@ -14,6 +14,5 @@ app.use('/', express.static(__dirname+ '/')); // any file called from "/" in ejs
 let webApp = require('./routes/webApp');
 app.use('/',webApp);
 
-dev
 // port
 app.listen(3000);
