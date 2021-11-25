@@ -1,11 +1,11 @@
 const express = require('express');
 const expressEjsLayout = require('express-ejs-layouts');
-//const Gpio = require('onoff').Gpio
+const Gpio = require('onoff').Gpio
 const app = express();
 
-//const RED = new Gpio(21, 'out');
-//const YELLOW = new Gpio(20, 'out');
-//const GREEN = new Gpio(26, 'out');
+const RED = new Gpio(21, 'out');
+const YELLOW = new Gpio(20, 'out');
+const GREEN = new Gpio(26, 'out');
 
 app.set('view engine','ejs');
 app.use(expressEjsLayout);
@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended : false}));
 app.use('/', express.static(__dirname+ '/')); // any file called from "/" in ejs file will start in main folder
 
 let webApp = require('./routes/webApp');
-app.use('/',webApp);
+app.use('/',webApp(RED,YELLOW,GREEN));
 
 /*
 app.get('/', function (req, res) {
