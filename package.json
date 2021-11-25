@@ -1,6 +1,6 @@
 {
   "name": "stop-light",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Control a traffic light with your phone",
   "main": "app.js",
   "scripts": {
