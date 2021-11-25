@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended : false}));
 app.use('/', express.static(__dirname+ '/')); // any file called from "/" in ejs file will start in main folder
 
 let webApp = require('./routes/webApp');
-app.use('/',webApp("filled"));
+app.use('/',webApp());
 
 // port
 app.listen(3000);
